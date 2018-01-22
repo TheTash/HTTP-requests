@@ -11,11 +11,11 @@ function getAndPrintHTML() {
       response.setEncoding('utf-8');
 
       response.on('data', function(data) {
-        inputStorage+= console.log('Chunk Received. Length: ' + data+ '\n');
+        inputStorage +=  data;
       });
 
       response.on('end', function() {
-        inputStorage+= console.log('Repsonse stream complete.');
+        console.log('Repsonse stream complete. ' + inputStorage);
       });
     });
   }
