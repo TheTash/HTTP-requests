@@ -1,3 +1,5 @@
+var https = require('https');
+
 function getAndPrintHTML() {
   var inputStorage = '';
 
