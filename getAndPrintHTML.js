@@ -11,7 +11,7 @@ function getAndPrintHTML() {
       response.setEncoding('utf-8');
 
       response.on('data', function(data) {
-        inputStorage+= console.log('Chunk Received. Length: ' + data.length);
+        inputStorage+= console.log('Chunk Received. Length: ' + data.length + '\n');
       });
 
       response.end('end', function() {

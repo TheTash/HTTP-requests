@@ -9,7 +9,7 @@ function getAndPrintHTML(options) {
       response.setEncoding('utf-8');
 
       response.on('data', function(data) {
-        console.log('Chunk Received. Length: ' + data.length);
+        console.log('Chunk Received. Length: ' + data.length + ' \n');
       });
       response.end('end', function() {
         console.log('Repsonse stream complete.');
