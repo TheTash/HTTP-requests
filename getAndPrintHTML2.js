@@ -2,17 +2,17 @@ var https = require('https');
 
 function getAndPrintHTML(options) {
 
-  var inputStorage = {};
+  var inputStorage = '';
 
 
     https.get(options, function (response) {
       response.setEncoding('utf-8');
 
       response.on('data', function(data) {
-        console.log('Chunk Received. Length: ' + data + ' \n');
+        inputStorage+= console.log('Chunk Received. Length: ' + data + ' \n');
       });
       response.on('end', function() {
-        console.log('Repsonse stream complete.');
+        inputStorage+= console.log('Repsonse stream complete.');
       });
 
     });
