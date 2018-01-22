@@ -5,16 +5,16 @@ function getAndPrintHTML() {
 
   var requestOptions = {
     host: 'sytantris.github.io',
-    path: 'http-examples/step2.html'
+    path: '/http-examples/step2.html'
   };
     https.get(requestOptions, function(response) {
       response.setEncoding('utf-8');
 
       response.on('data', function(data) {
-        inputStorage+= console.log('Chunk Received. Length: ' + data.length + '\n');
+        inputStorage+= console.log('Chunk Received. Length: ' + data+ '\n');
       });
 
-      response.end('end', function() {
+      response.on('end', function() {
         inputStorage+= console.log('Repsonse stream complete.');
       });
     });

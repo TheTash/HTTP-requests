@@ -9,9 +9,9 @@ function getAndPrintHTML(options) {
       response.setEncoding('utf-8');
 
       response.on('data', function(data) {
-        console.log('Chunk Received. Length: ' + data.length + ' \n');
+        console.log('Chunk Received. Length: ' + data + ' \n');
       });
-      response.end('end', function() {
+      response.on('end', function() {
         console.log('Repsonse stream complete.');
       });
 
@@ -22,7 +22,7 @@ function getAndPrintHTML(options) {
 
 var requestOptions = {
   host: 'sytantris.github.io',
-  path: 'http-examples/step2.html'
+  path: '/http-examples/step2.html'
 };
 
 getAndPrintHTML(requestOptions);
